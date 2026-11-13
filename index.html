@@ -527,8 +527,15 @@
       .hero-win{animation:none}
       *,*::before,*::after{transition-duration:.01ms!important}
     }
-  </style>
 
+    #netlify-badge, .netlify-badge {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+    }
+  </style>
   <script type="module">
     /* ===== CONFIGURACIÓN CON TU NÚMERO ===== */
     const WHATSAPP_NUMERO = '34674287987';
