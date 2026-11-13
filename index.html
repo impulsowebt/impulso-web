@@ -5,61 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B1030">
 
-  <!-- 1. SEO PRINCIPAL (Keyword Mapping + Intención de búsqueda B2B Local) -->
-  <title>Diseño Web y Software de Gestión para Negocios | Impulso Web</title>
-  <meta name="description" content="Agencia de diseño web a medida y software de control de caja, stock y agenda para negocios locales y pymes en Mataró, Maresme, Vallès y Barcelona. Sin comisiones.">
+  <!-- 1. SEO PRINCIPAL (60 caracteres en title / 141 en description con precio y zona) -->
+  <title>Diseño Web y Software de Gestión en el Maresme | Impulso Web</title>
+  <meta name="description" content="Diseño web a medida y software de caja, stock y agenda para negocios en Mataró, Maresme, Vallès y Barcelona. Desde 30 €/mes, sin comisiones.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://impulsoweb.top/">
+  <link rel="canonical" href="https://somosimpulso.es/">
 
-  <!-- 2. GEOLOCALIZACIÓN (Conecta con tu ficha de Google Maps) -->
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Mataró, Maresme, Barcelona">
-  <meta name="geo.position" content="41.5381;2.4447">
-  <meta name="ICBM" content="41.5381, 2.4447">
-
-  <!-- 3. OPEN GRAPH / WHATSAPP (La tarjeta visual cuando mandas el link a puerta fría) -->
+  <!-- 2. OPEN GRAPH / WHATSAPP (1200x630 · Relación 1.91:1 óptima) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Impulso Web">
   <meta property="og:title" content="Impulso Web · Diseño Web a Medida y Software de Caja y Stock">
-  <meta property="og:description" content="Tu propia página web para captar clientes y tu sistema de tesorería, stock y contactos llave en mano. Sin comisiones ni permanencias.">
-  <meta property="og:url" content="https://impulsoweb.top/">
-  <meta property="og:image" content="https://impulsoweb.top/captura-tesoreria.png">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="800">
-  <meta property="og:image:alt" content="Panel de control de Impulso Gestión: Tesorería, Caja y Stock">
+  <meta property="og:description" content="Tu propia página web para captar clientes y tu sistema de tesorería, stock y contactos llave en mano. Desde 30 €/mes, sin comisiones.">
+  <meta property="og:url" content="https://somosimpulso.es/">
+  <meta property="og:image" content="https://somosimpulso.es/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Impulso Web: Diseño web y software de gestión desde 30 €/mes">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Impulso Web · Diseño Web y Software de Caja y Stock">
-  <meta name="twitter:description" content="Web a medida + Control de caja y almacén llave en mano para negocios locales. Sin comisiones.">
-  <meta name="twitter:image" content="https://impulsoweb.top/captura-tesoreria.png">
+  <meta name="twitter:description" content="Web a medida + Control de caja y almacén llave en mano para negocios locales. Desde 30 €/mes, sin comisiones.">
+  <meta name="twitter:image" content="https://somosimpulso.es/og-image.jpg">
 
-  <!-- Iconos -->
-  <link rel="icon" type="image/png" href="logo-toro.png">
-  <link rel="apple-touch-icon" href="logo-toro.png">
+  <!-- 3. ICONOS Y MANIFEST -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- 4. DATOS ESTRUCTURADOS SCHEMA.ORG (JSON-LD: Empresa + Precios + FAQs) -->
+  <!-- 4. DATOS ESTRUCTURADOS SCHEMA.ORG (JSON-LD validado: ProfessionalService + WebSite + WebPage + Precios Alta/Mes + FAQs) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": ["ProfessionalService", "ComputerConsultant"],
-          "@id": "https://impulsoweb.top/#agency",
+          "@type": "ProfessionalService",
+          "@id": "https://somosimpulso.es/#agency",
           "name": "Impulso Web",
-          "url": "https://impulsoweb.top/",
-          "logo": "https://impulsoweb.top/logo-toro.png",
-          "image": "https://impulsoweb.top/captura-tesoreria.png",
-          "description": "Agencia de software y diseño web a medida para negocios locales, comercios y pymes. Servicio llave en mano de páginas web SEO local y software de control de tesorería, caja y stock.",
+          "url": "https://somosimpulso.es/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://somosimpulso.es/icon-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://somosimpulso.es/og-image.jpg",
+          "description": "Agencia de diseño web a medida y software de control de tesorería, caja, stock y agenda para negocios locales, comercios, reformas y pymes en el Maresme, Vallès y Barcelona.",
           "telephone": "+34674287987",
-          "priceRange": "295€ - 695€",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Sant Andreu de Llavaneres",
             "addressRegion": "Barcelona",
             "postalCode": "08392",
             "addressCountry": "ES"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34674287987",
+            "contactType": "sales",
+            "availableLanguage": ["es", "ca"],
+            "areaServed": "ES-CT"
           },
           "areaServed": [
             { "@type": "City", "name": "Mataró" },
@@ -81,42 +89,101 @@
             "itemListElement": [
               {
                 "@type": "Offer",
+                "name": "Impulso Web - Diseño Web a Medida",
+                "description": "Página web profesional enfocada en SEO local y captación de clientes por WhatsApp. Alta llave en mano de 295 € más 30 €/mes de alojamiento, dominio y mantenimiento.",
+                "priceSpecification": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "295.00",
+                    "priceCurrency": "EUR",
+                    "name": "Alta llave en mano (pago único)"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "30.00",
+                    "priceCurrency": "EUR",
+                    "billingDuration": "P1M",
+                    "name": "Cuota mensual de servidor, dominio y cambios"
+                  }
+                ],
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Impulso Web - Diseño Web a Medida",
-                  "description": "Página web profesional enfocada en SEO local y captación de clientes por WhatsApp."
-                },
-                "price": "295.00",
-                "priceCurrency": "EUR"
+                  "name": "Impulso Web - Diseño Web a Medida"
+                }
               },
               {
                 "@type": "Offer",
+                "name": "Impulso Gestión - Software de Caja y Stock",
+                "description": "Software a medida para control de tesorería, caja, agenda de contactos y stock. Alta llave en mano de 495 € con migración de datos más 40 €/mes.",
+                "priceSpecification": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "495.00",
+                    "priceCurrency": "EUR",
+                    "name": "Alta llave en mano con carga de datos (pago único)"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "40.00",
+                    "priceCurrency": "EUR",
+                    "billingDuration": "P1M",
+                    "name": "Cuota mensual de servidor y soporte"
+                  }
+                ],
                 "itemOffered": {
                   "@type": "SoftwareApplication",
-                  "name": "Impulso Gestión - Software de Caja y Stock",
+                  "name": "Impulso Gestión",
                   "applicationCategory": "BusinessApplication",
-                  "operatingSystem": "Web, iOS, Android, Windows, macOS",
-                  "description": "Software a medida para control de tesorería, caja, agenda de contactos y stock."
-                },
-                "price": "495.00",
-                "priceCurrency": "EUR"
+                  "operatingSystem": "Web, iOS, Android, Windows, macOS"
+                }
               },
               {
                 "@type": "Offer",
+                "name": "Pack Completo Impulso Web + Impulso Gestión",
+                "description": "Web a medida más sistema de gestión interna llave en mano con migración de datos incluida. Alta de 695 € más 60 €/mes.",
+                "priceSpecification": [
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "695.00",
+                    "priceCurrency": "EUR",
+                    "name": "Alta Pack Completo (pago único)"
+                  },
+                  {
+                    "@type": "UnitPriceSpecification",
+                    "price": "60.00",
+                    "priceCurrency": "EUR",
+                    "billingDuration": "P1M",
+                    "name": "Cuota mensual Pack Completo"
+                  }
+                ],
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Pack Completo Impulso Web + Impulso Gestión",
-                  "description": "Web a medida más sistema de gestión interna llave en mano con migración de datos incluida."
-                },
-                "price": "695.00",
-                "priceCurrency": "EUR"
+                  "name": "Pack Completo Impulso Web + Impulso Gestión"
+                }
               }
             ]
           }
         },
         {
+          "@type": "WebSite",
+          "@id": "https://somosimpulso.es/#website",
+          "url": "https://somosimpulso.es/",
+          "name": "Impulso Web",
+          "inLanguage": "es-ES",
+          "publisher": { "@id": "https://somosimpulso.es/#agency" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://somosimpulso.es/#webpage",
+          "url": "https://somosimpulso.es/",
+          "name": "Diseño Web y Software de Gestión en el Maresme | Impulso Web",
+          "isPartOf": { "@id": "https://somosimpulso.es/#website" },
+          "about": { "@id": "https://somosimpulso.es/#agency" },
+          "inLanguage": "es-ES"
+        },
+        {
           "@type": "FAQPage",
-          "@id": "https://impulsoweb.top/#faqpage",
+          "@id": "https://somosimpulso.es/#faqpage",
           "mainEntity": [
             {
               "@type": "Question",
@@ -164,27 +231,11 @@
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
-  <!-- Librerías por CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Librerías por CDN (Sin Tailwind, 100% diferidas para no bloquear el renderizado) -->
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0/dist/umd/lucide.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
-
-  <!-- Paleta y fuentes registradas en Tailwind -->
-  <style type="text/tailwindcss">
-    @theme {
-      --color-noche: #0B1030;
-      --color-azul: #2B5BAE;
-      --color-indigo: #1B1F6B;
-      --color-electrico: #4DB8E8;
-      --color-ambar: #FF9F1C;
-      --color-hueso: #F6F8FC;
-      --color-gris: #8A94B3;
-      --font-display: 'Clash Display', ui-sans-serif, system-ui, sans-serif;
-      --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
-    }
-  </style>
 
   <style>
     /* =====================================================================
@@ -677,8 +728,11 @@
         <div class="glass-card no-lift hero-win">
           <div class="window-bar"><div class="dots"><i></i><i></i><i></i></div><span class="hero-win-t">Impulso Gestión · Tesorería y Caja</span></div>
           <div class="hero-shot">
-            <img src="captura-tesoreria.png" width="1280" height="800" fetchpriority="high" alt="Software Impulso Gestión mostrando el control de tesorería y caja diaria" onerror="this.parentNode.classList.add('is-missing')">
-            <span class="ph">Aquí va <code>captura-tesoreria.png</code></span>
+            <picture>
+              <source media="(min-width:1000px)" srcset="captura-tesoreria.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1280" height="800" fetchpriority="high" alt="Software Impulso Gestión mostrando el control de tesorería y caja diaria" onerror="this.parentNode.parentNode.classList.add('is-missing')">
+            </picture>
+            <span class="ph">Aquí va <code>captura-tesoreria.webp</code></span>
           </div>
         </div>
       </div>
@@ -738,19 +792,19 @@
 
           <div class="stage" id="panel" role="tabpanel" aria-labelledby="tab-1">
             <div class="shot-wrap is-active">
-              <img class="shot" src="captura-tesoreria.png" width="1280" height="800" alt="Captura del módulo de Tesorería y Caja: ingresos, gastos y saldo por método de pago"
+              <img class="shot" src="captura-tesoreria.webp" width="1280" height="800" alt="Captura del módulo de Tesorería y Caja: ingresos, gastos y saldo por método de pago"
                    onerror="this.closest('.shot-wrap').classList.add('is-missing')">
-              <div class="ph">Aquí va <code>captura-tesoreria.png</code></div>
+              <div class="ph">Aquí va <code>captura-tesoreria.webp</code></div>
             </div>
             <div class="shot-wrap">
-              <img class="shot" src="captura-contactos.png" width="1280" height="800" alt="Captura de la Agenda de Contactos: clientes y proveedores" loading="lazy"
+              <img class="shot" src="captura-contactos.webp" width="1280" height="800" alt="Captura de la Agenda de Contactos: clientes y proveedores" loading="lazy"
                    onerror="this.closest('.shot-wrap').classList.add('is-missing')">
-              <div class="ph">Aquí va <code>captura-contactos.png</code></div>
+              <div class="ph">Aquí va <code>captura-contactos.webp</code></div>
             </div>
             <div class="shot-wrap">
-              <img class="shot" src="captura-inventario.png" width="1280" height="800" alt="Captura del módulo de Control de Stock con aviso de artículos bajo mínimos" loading="lazy"
+              <img class="shot" src="captura-inventario.webp" width="1280" height="800" alt="Captura del módulo de Control de Stock con aviso de artículos bajo mínimos" loading="lazy"
                    onerror="this.closest('.shot-wrap').classList.add('is-missing')">
-              <div class="ph">Aquí va <code>captura-inventario.png</code></div>
+              <div class="ph">Aquí va <code>captura-inventario.webp</code></div>
             </div>
           </div>
 
@@ -826,7 +880,7 @@
       </div>
     </div>
 
-    <!-- Las 3 tarjetas de precios directas (Sin repetir bloques en otra sección) -->
+    <!-- Las 3 tarjetas de precios directas -->
     <div class="price-grid">
       <!-- Tarjeta 1: Impulso Web -->
       <article class="glass-card b-card price-card" data-reveal>
@@ -880,7 +934,6 @@
         </ul>
         <div class="b-foot">
           <a class="glass-card r-full btn btn-glass btn-sm" data-wa="gestion" href="https://wa.me/34674287987">Quiero Impulso Gestión</a>
-          <p class="b-note">Control interno. No es facturación fiscal ni sustituye a tu gestoría.</p>
         </div>
       </article>
     </div>
@@ -937,6 +990,44 @@
         <span class="trato-n">03</span>
         <div><h3>Es tuyo, sin comisiones</h3><p>Sin permanencia ni porcentajes por venta. Tus datos son siempre tuyos.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ========= BLOQUE SEO LOCAL: COBERTURA EN MARESME, VALLÈS Y BARCELONA ========= -->
+  <section class="section llave-sec" id="zona" aria-labelledby="zona-t">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Cobertura local · Trato directo</p>
+      <h2 class="h2" id="zona-t" style="margin-top:14px">Diseño web y software de gestión en el <span class="grad">Maresme, Vallès y Barcelona</span></h2>
+      <p class="lead" style="margin-top:18px">Trabajamos codo con codo con negocios de oficio, comercios y pymes de nuestra zona que quieren digitalizarse sin perder tiempo.</p>
+    </div>
+
+    <div class="llave-grid">
+      <article class="glass-card llave-card" data-reveal>
+        <span class="llave-ico"><i data-lucide="map-pin" aria-hidden="true"></i></span>
+        <h3 class="llave-t">Mataró y todo el Maresme</h3>
+        <p class="llave-p">Atención cercana para negocios de Mataró, Sant Andreu de Llavaneres, Vilassar, Premià, El Masnou, Arenys, Calella y alrededores.</p>
+        <ul class="llave-chips" aria-label="Municipios del Maresme">
+          <li>Mataró</li><li>Llavaneres</li><li>Vilassar</li><li>Arenys</li>
+        </ul>
+      </article>
+
+      <article class="glass-card llave-card" data-reveal>
+        <span class="llave-ico"><i data-lucide="wrench" aria-hidden="true"></i></span>
+        <h3 class="llave-t">Vallès Oriental y Occidental</h3>
+        <p class="llave-p">Páginas web y control de caja y almacén para empresas de reformas, talleres, instaladores y comercios en Granollers, Sabadell y Terrassa.</p>
+        <ul class="llave-chips" aria-label="Municipios del Vallès">
+          <li>Granollers</li><li>Sabadell</li><li>Terrassa</li><li>Mollet</li>
+        </ul>
+      </article>
+
+      <article class="glass-card llave-card" data-reveal>
+        <span class="llave-ico"><i data-lucide="building-2" aria-hidden="true"></i></span>
+        <h3 class="llave-t">Barcelona, Badalona y La Selva</h3>
+        <p class="llave-p">Configuración remota o presencial, carga inicial de datos y soporte directo por WhatsApp para negocios desde Barcelona hasta Blanes.</p>
+        <ul class="llave-chips" aria-label="Otras zonas">
+          <li>Barcelona</li><li>Badalona</li><li>Blanes</li>
+        </ul>
+      </article>
     </div>
   </section>
 
@@ -1012,6 +1103,7 @@
     <a href="#erp">El Sistema</a>
     <a href="#precios">Precios</a>
     <a href="#llave-en-mano">Llave en mano</a>
+    <a href="#zona">Zonas</a>
     <a href="#faq">Dudas</a>
   </nav>
 </footer>

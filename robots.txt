@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://impulsoweb.top/sitemap.xml
+Sitemap: https://somosimpulso.es/sitemap.xml
