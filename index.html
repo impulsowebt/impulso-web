@@ -498,14 +498,45 @@
     /* ---------- Cierre + Footer ---------- */
     .cierre{max-width:1040px;margin:clamp(72px,10vw,120px) auto 0;padding:clamp(28px,5vw,60px);text-align:center}
     .cierre .cta-row{margin-top:30px}
-    .foot{position:relative;z-index:1;max-width:1040px;margin:clamp(56px,8vw,96px) auto 0;padding:28px 20px 44px;border-top:1px solid rgba(255,255,255,.08);
-      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;color:var(--gris);font-size:13.5px}
-    .foot nav{display:flex;gap:20px;flex-wrap:wrap}
-    .foot a:hover{color:var(--hueso)}
+    /* ---------- Pie de página ---------- */
+    .site-foot{position:relative;z-index:1;margin-top:clamp(72px,10vw,130px);border-top:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg,rgba(27,31,107,0) 0%,rgba(27,31,107,.55) 40%,rgba(11,16,48,.96) 100%)}
+    .sf-in{max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,84px) 20px 36px}
+    .sf-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+    @media(min-width:700px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:1000px){.sf-grid{grid-template-columns:1.5fr 1fr 1fr 1.25fr;gap:48px}}
+    .sf-brand .brand{font-size:22px;gap:12px}
+    .sf-brand .brand-logo{width:48px;height:48px}.sf-brand .brand-logo img{width:36px;height:36px}
+    .sf-desc{margin:22px 0 0;max-width:430px;color:var(--hueso);font-size:1.05rem;line-height:1.6;font-weight:500;text-wrap:pretty}
+    .sf-slash{display:block;width:130px;height:6px;margin-top:24px;border-radius:9999px;background:linear-gradient(100deg,var(--ambar),rgba(255,159,28,0));transform:rotate(-5deg);transform-origin:left center}
+    .sf-chips{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+    .sf-chips li{font-size:12.5px;font-weight:500;color:var(--hueso);padding:6px 12px;border-radius:9999px;background:rgba(246,248,252,.07);border:1px solid rgba(255,255,255,.14)}
+    .sf-h{margin:0 0 22px;font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.01em;color:var(--hueso)}
+    .sf-links{list-style:none;margin:0;padding:0;display:grid;gap:15px}
+    .sf-links a{display:inline-block;font-weight:700;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ambar);transition:color .2s ease,transform .25s var(--ease)}
+    .sf-links a:hover{color:var(--hueso);transform:translateX(5px)}
+    .sf-contact{display:grid;gap:12px;margin:0 0 4px;color:var(--gris);font-size:15px;line-height:1.5}
+    .sf-contact a{color:var(--hueso);font-weight:500}
+    .sf-contact a:hover{color:var(--electrico)}
+    .sf-col .btn{margin-top:16px;width:100%;justify-content:center;gap:10px;font-size:15px;white-space:normal;text-align:center}
+    .sf-social{display:flex;gap:12px;margin-top:24px}
+    .sf-social a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ambar);color:var(--noche);transition:transform .25s var(--ease),box-shadow .25s ease}
+    .sf-social a:hover{transform:translateY(-3px);box-shadow:0 12px 26px -8px rgba(255,159,28,.75)}
+    .sf-social svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .sf-legal{margin:clamp(36px,5vw,56px) 0 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;line-height:1.75;color:var(--gris);text-wrap:pretty}
+    .sf-bar{background:var(--ambar);color:var(--noche)}
+    .sf-bar-in{max-width:1180px;margin:0 auto;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;font-weight:500;font-size:14.5px}
+    .sf-bar a{color:var(--noche);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .sf-top{width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:var(--noche);color:var(--ambar);transition:transform .25s var(--ease)}
+    .sf-top:hover{transform:translateY(-3px)}
+    .sf-top svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
     /* ---------- Animaciones de entrada ---------- */
-    .js [data-reveal]{opacity:0;transform:translateY(28px)}
-    .no-anim [data-reveal]{opacity:1!important;transform:none!important}
+    /* Aparecen al entrar en pantalla (lo gestiona IntersectionObserver). Se usa la propiedad "translate"
+       para no pisar los "transform" de los hover. Al terminar, el JS quita data-reveal y el elemento queda limpio. */
+    .js [data-reveal]{opacity:0;translate:0 28px;transition:opacity .9s var(--ease) var(--d,0s),translate .9s var(--ease) var(--d,0s)}
+    .js [data-reveal].is-in{opacity:1;translate:0 0}
+    .no-anim [data-reveal]{opacity:1!important;translate:none!important;transition:none!important}
 
     @media(max-width:819px){
       .window-bar{flex-wrap:wrap;padding:12px}
@@ -523,7 +554,7 @@
     }
     @media(prefers-reduced-motion:reduce){
       .orb,.dot::after{animation:none}
-      .js [data-reveal]{opacity:1;transform:none}
+      .js [data-reveal]{translate:none}
       .hero-win{animation:none}
       *,*::before,*::after{transition-duration:.01ms!important}
     }
@@ -597,17 +628,28 @@
       });
     });
 
-    /* ===== Aparición al hacer scroll ===== */
-    try {
-      if (!hasST || reduceMotion) throw new Error('sin animaciones');
-      ScrollTrigger.batch('[data-reveal]', {
-        start: 'top 92%', once: true,
-        onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: 0.09, overwrite: true })
-      });
-      addEventListener('load', () => ScrollTrigger.refresh());
-    } catch (e) {
-      document.documentElement.classList.add('no-anim');
-    }
+    /* ===== Aparición al hacer scroll (IntersectionObserver: no depende de GSAP, ScrollTrigger ni Lenis) ===== */
+    safe('aparicion', () => {
+      const els = $$('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { document.documentElement.classList.add('no-anim'); return; }
+      const limpiar = el => el.removeAttribute('data-reveal');
+      const mostrar = el => {
+        el.classList.add('is-in');
+        el.addEventListener('transitionend', e => { if (e.target === el && e.propertyName === 'opacity') limpiar(el); });
+        setTimeout(() => limpiar(el), 2200); // por si no llega transitionend (pestaña en segundo plano, etc.)
+      };
+      const io = new IntersectionObserver(entradas => {
+        let i = 0;
+        entradas.filter(e => e.isIntersecting).forEach(e => {
+          e.target.style.setProperty('--d', Math.min(i++ * 0.09, 0.45) + 's');
+          io.unobserve(e.target);
+          mostrar(e.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(el => io.observe(el));
+      // Red de seguridad: si en 3 s no ha aparecido nada (algo raro del navegador), se muestra todo sin animar
+      setTimeout(() => { if (!document.querySelector('.is-in')) document.documentElement.classList.add('no-anim'); }, 3000);
+    });
 
     /* ===== Escaparate: pestañas ===== */
     safe('pestañas', () => {
@@ -1096,16 +1138,66 @@
 
 </main>
 
-<footer class="foot">
-  <span>© <span id="anio">2026</span> Impulso Web · Agencia de diseño web y software a medida en Mataró, Maresme, Vallès y Barcelona</span>
-  <nav aria-label="Pie de página">
-    <a href="#problema">El Problema</a>
-    <a href="#erp">El Sistema</a>
-    <a href="#precios">Precios</a>
-    <a href="#llave-en-mano">Llave en mano</a>
-    <a href="#zona">Zonas</a>
-    <a href="#faq">Dudas</a>
-    <a href="#legal" id="open-legal">Aviso Legal y Privacidad</a>  </nav>
+<footer class="site-foot" id="pie">
+  <div class="sf-in">
+    <div class="sf-grid">
+      <div class="sf-col sf-brand" data-reveal>
+        <a class="brand" href="#inicio" aria-label="Impulso Web, ir al inicio">
+          <span class="brand-logo"><img src="logo-toro.png" width="36" height="36" alt="" loading="lazy"></span>
+          <span>Impulso Web</span>
+        </a>
+        <p class="sf-desc">Diseñamos webs a medida y sistemas de gestión llave en mano para negocios locales del Maresme, Vallès y Barcelona. Tú te dedicas a tu negocio, nosotros a la tecnología.</p>
+        <span class="sf-slash" aria-hidden="true"></span>
+        <ul class="sf-chips" aria-label="Nuestro compromiso"><li>Sin permanencia</li><li>Sin comisiones</li><li>Soporte por WhatsApp</li></ul>
+      </div>
+
+      <nav class="sf-col" aria-label="Secciones de la web" data-reveal>
+        <p class="sf-h">Navegar</p>
+        <ul class="sf-links">
+          <li><a href="#problema">El problema</a></li>
+          <li><a href="#erp">El sistema</a></li>
+          <li><a href="#llave-en-mano">Llave en mano</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#zona">Zonas</a></li>
+          <li><a href="#faq">Dudas</a></li>
+        </ul>
+      </nav>
+
+      <nav class="sf-col" aria-label="Productos" data-reveal>
+        <p class="sf-h">Productos</p>
+        <ul class="sf-links">
+          <li><a href="#servicios">Impulso Web</a></li>
+          <li><a href="#erp">Impulso Gestión</a></li>
+          <li><a href="#precios">Pack completo</a></li>
+        </ul>
+      </nav>
+
+      <div class="sf-col" data-reveal>
+        <p class="sf-h">Hablemos</p>
+        <div class="sf-contact">
+          <span>Sant Andreu de Llavaneres · Maresme (Barcelona)</span>
+          <a href="tel:+34674287987">+34 674 287 987</a>
+        </div>
+        <a class="btn btn-amber btn-lg" data-wa="whatsapp" href="https://wa.me/34674287987"><svg style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Escríbenos por WhatsApp</a>
+        <!-- ⚠️ Cambia TU_USUARIO por tus perfiles reales (o borra los iconos que no uses) -->
+        <div class="sf-social">
+          <a href="https://www.instagram.com/TU_USUARIO" target="_blank" rel="noopener" aria-label="Instagram de Impulso Web"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+          <a href="https://www.tiktok.com/@TU_USUARIO" target="_blank" rel="noopener" aria-label="TikTok de Impulso Web"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+          <a href="https://www.linkedin.com/company/TU_USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn de Impulso Web"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="sf-legal" data-reveal>Impulso Web desarrolla páginas web y software de gestión a medida. Impulso Gestión organiza la tesorería y el control de caja, el inventario y la agenda de contactos de tu negocio: no es un programa de facturación ni sustituye a tu gestoría. Los nombres de marcas de terceros que puedan aparecer pertenecen a sus respectivos propietarios y se mencionan solo con fines de identificación.</p>
+  </div>
+
+  <div class="sf-bar">
+    <div class="sf-bar-in">
+      <span>© <span id="anio">2026</span> Impulso Web. Todos los derechos reservados.</span>
+      <a href="#legal" id="open-legal">Aviso legal y privacidad</a>
+      <button type="button" class="sf-top" id="sf-top" aria-label="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></button>
+    </div>
+  </div>
 </footer>
 <!-- Modal de Aviso Legal y Privacidad -->
 <dialog id="legal-modal" class="glass-card no-lift" style="max-width:680px;width:92%;color:var(--hueso);padding:clamp(22px,4vw,36px);border-radius:1.5rem;background:rgba(11,16,48,0.94)">
@@ -1129,6 +1221,7 @@
 
 <script>
   document.getElementById('anio').textContent = new Date().getFullYear();
+  document.getElementById('sf-top').addEventListener('click', () => { if (window.lenis) window.lenis.scrollTo(0, { duration: 1.2 }); else scrollTo({ top: 0, behavior: 'smooth' }); });
   const modal = document.getElementById('legal-modal');
   document.getElementById('open-legal').addEventListener('click', e => { e.preventDefault(); modal.showModal(); });
   document.getElementById('close-legal').addEventListener('click', () => modal.close());
